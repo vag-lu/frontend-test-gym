@@ -1,0 +1,24 @@
+.modal {
+    position: absolute;
+    top: 240px;
+    left: 350px;
+    right: 350px;
+    bottom: 240px;
+    background-color: white;    
+    border-radius: 15px;
+    outline: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modalContent {
+    text-align: center;
+    padding: 20px;
+}
