@@ -1,0 +1,13 @@
+.head {
+   margin-top: 8vh;
+   text-align: left;
+}
+
+.head p {
+   font-size: 14px;
+}
+
+.head p span {
+   font-size: 16px;
+   font-weight: bold;
+}

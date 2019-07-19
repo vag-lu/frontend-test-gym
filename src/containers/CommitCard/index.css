@@ -1,0 +1,39 @@
+.commit-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-left: 5px;
+}
+  
+ .commit-container::after {
+   content: '';
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   left: 0;
+   background-color: white;
+   top: 25px;
+   border-radius: 50%;
+   z-index: 1;
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.content {
+    padding: 10px 15px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}

@@ -1,0 +1,11 @@
+.repository-card {
+    color: rgb(29, 29, 29);    
+    justify-content: center;
+    line-height: 0.5;
+}
+
+.repository-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
