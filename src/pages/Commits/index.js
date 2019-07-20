@@ -11,7 +11,9 @@ class Commits extends Component {
         super()
 
         this.state = {
-            commits: []
+            commitsToShow: [],
+            allCommits: [],
+            search: ""
         }
     }
 
@@ -25,26 +27,55 @@ class Commits extends Component {
             if (repositoryName !== null || gitUser !== null) {
                 getCommits(gitUser, repositoryName).then(
                     result => {
-                        this.setState({ commits: result.data.slice(0, 20) })
+                        const commits = result.data.slice(0, 20)
+                        this.setState({ allCommits: commits, commitsToShow: commits })
                     }
                 )
             }
         }
     }
 
+    handleSearchChange = (event) => {
+        this.setState({ search: event.target.value })
+        this.doSearch()
+    }
+
+    doSearch() {
+        const {
+            allCommits,
+            search
+        } = this.state
+
+
+        const filteredCommits = allCommits.filter(commit => {
+            if (commit.commit.message.includes(search)) {
+                return commit
+            } else {
+                return null
+            }
+        })
+
+        this.setState({ commitsToShow: filteredCommits })
+
+    }
+
     render() {
         const {
-            commits
+            commitsToShow,
+            search
         } = this.state
 
         return (
             <div>
-                <Search/>
+                <Search
+                    handleSearchChange={this.handleSearchChange}
+                    search={search} />
+
                 <div class="timeline">
                     {this.props.location.state === undefined &&
                         <Redirect to='/repositories' />
                     }
-                    {commits.map(commit => (
+                    {commitsToShow.map(commit => (
                         <CommitCard commit={commit} />
                     ))}
 
