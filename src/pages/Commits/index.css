@@ -9,9 +9,8 @@
   
   .timeline {
     position: relative;
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
-    left: 22%;
   }
   
   .timeline::after {
