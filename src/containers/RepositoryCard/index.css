@@ -9,3 +9,7 @@
     font-weight: bold;
     margin: 0;
 }
+
+.repository-link {    
+    text-decoration: none;     
+}

@@ -61,7 +61,8 @@ class Repositories extends Component {
 
           {repositories.map(repository => (
             <RepositoryCard
-              repository={repository}/>
+              repository={repository}
+              gitUser={gitUser}/>
           ))}
 
           {repositories.length === 0 &&
