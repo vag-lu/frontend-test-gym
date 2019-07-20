@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { format } from 'date-fns';
 
 import './index.css'
 
@@ -7,11 +8,12 @@ class CommitCard extends Component {
         const {
             commit
         } = this.props
-        
+
         return (
             <div class="commit-container right">
                 <div class="content">
-                    <p>{commit.commit.committer.date.replace(/T|Z/g, " ")} "{commit.commit.message}"</p>
+                    <p>{format(commit.commit.committer.date,
+                        "HH:mm:ss DD-MMM-YYYY")} "{commit.commit.message}"</p>
                 </div>
             </div>
         )
